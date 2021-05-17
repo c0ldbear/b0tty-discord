@@ -1,7 +1,8 @@
 import discord
 from discord.ext import commands
+from token-b0tty.py import GetDiscordToken
 
-TOKEN = 'ODQxNzI1NjQ4OTU5MTc2NzY5.YJq8GQ.u4doeIELGPbraOX2fxpnJwX9mho'
+TOKEN = GetDiscordToken()
 
 description = '''List of b0tty\'s commands'''
 bot = commands.Bot(command_prefix='!', description=description)
