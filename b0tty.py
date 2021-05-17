@@ -14,7 +14,7 @@ def add2(int1 : float, int2: float):
 async def on_ready():
     print('Logged in as')
     print('name: ' + bot.user.name)
-    print('id:   ' + bot.user.id)
+    print('id:   ' + str(bot.user.id))
     print('------')
 
 
