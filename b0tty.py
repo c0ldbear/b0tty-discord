@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from token-b0tty.py import GetDiscordToken
+from token_b0tty import *
 
 TOKEN = GetDiscordToken()
 
