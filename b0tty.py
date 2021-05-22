@@ -29,11 +29,18 @@ async def add(ctx, left : int, right : int):
     await ctx.send(add2(left, right))
 
 @bot.command()
+async def news(ctx):
+    """ 404 - Command not found """ 
+    await ctx.send("Not really ready with this function yet.")
+
+@bot.command()
 async def ping(ctx):
+    """ pong """
     await ctx.send("pong")
 
 @bot.command()
 async def Ping(ctx):
+    """ Pong """
     await ctx.send("Pong")
 
 bot.run(TOKEN)
