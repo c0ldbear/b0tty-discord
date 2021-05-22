@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from token_b0tty import *
+import ./scripts/FetchNewsDagensNyheter as dn
 
 TOKEN = GetDiscordToken()
 
@@ -31,7 +32,11 @@ async def add(ctx, left : int, right : int):
 @bot.command()
 async def news(ctx):
     """ 404 - Command not found """ 
-    await ctx.send("Not really ready with this function yet.")
+    news = dn.FetchNews()
+    newsString = ""
+    for n in news:
+        newsString += "https://www.dn.se" + str(n[1]) + "\n"
+    await ctx.send(newsString)
 
 @bot.command()
 async def ping(ctx):
