@@ -32,7 +32,7 @@ async def add(ctx, left : int, right : int):
 @bot.command()
 async def news(ctx):
     """Fetch the latest 5 news from dn.se/nyhetsdygnet.""" 
-    News = dn.GrabNewsUrls()
+    News = await dn.GrabNewsUrls()
     newsString = ""
     dnUrl = "https://www.dn.se"
     for news in News[1:6]:
