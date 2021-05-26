@@ -37,7 +37,7 @@ async def news(ctx):
     dnUrl = "https://www.dn.se"
     for news in News[1:6]:
         newsString += dnUrl + str(news) + "\n"
-    newsString += "\n" + dnUrl + str(News[-1])
+    newsString += "\n" + dnUrl + str(News[0])
     await ctx.send(newsString)
 
 @bot.command()
