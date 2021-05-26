@@ -32,7 +32,7 @@ async def add(ctx, left : int, right : int):
 @bot.command()
 async def news(ctx):
     """ 404 - Command not found """ 
-    news = dn.FetchNews()
+    news = dn.GrabNewsUrls()
     newsString = ""
     for n in news:
         newsString += "https://www.dn.se" + str(n[1]) + "\n"
