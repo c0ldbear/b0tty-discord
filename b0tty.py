@@ -31,11 +31,13 @@ async def add(ctx, left : int, right : int):
 
 @bot.command()
 async def news(ctx):
-    """ 404 - Command not found """ 
+    """Fetch the latest 5 news from dn.se/nyhetsdygnet.""" 
     News = dn.GrabNewsUrls()
     newsString = ""
-    for news in News:
-        newsString += "https://www.dn.se" + str(news) + "\n"
+    dnUrl = "https://www.dn.se"
+    for news in News[1:6]:
+        newsString += dnUrl + str(news) + "\n"
+    newsString += "\n" + dnUrl + str(News[-1])
     await ctx.send(newsString)
 
 @bot.command()
