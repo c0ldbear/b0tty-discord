@@ -42,7 +42,7 @@ async def news(ctx):
 
 @bot.command()
 async def bootycall(ctx):
-    """Fetch the latest 5 news from dn.se/nyhetsdygnet.""" 
+    """Fetch top popular 5 news from dn.se""" 
     News = await dnTop.GrabTopNewsUrls()
     newsString = ""
     dnUrl = "https://www.dn.se"
