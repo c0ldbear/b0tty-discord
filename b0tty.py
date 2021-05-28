@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from token_b0tty import *
 from scripts import FetchNewsDagensNyheter as dn
+from scripts import FetchTopNewsDagensNyheter as dnTop
 
 TOKEN = GetDiscordToken()
 
@@ -39,6 +40,19 @@ async def news(ctx):
         newsString += dnUrl + str(news) + "\n"
     newsString += "\n" + dnUrl + "/nyhetsdygnet"
     await ctx.send(newsString)
+
+@bot.command()
+async def bootycall(ctx)
+    """Fetch the latest 5 news from dn.se/nyhetsdygnet.""" 
+    News = await dn.GrabTopNewsUrls()
+    newsString = ""
+    dnUrl = "https://www.dn.se"
+    for news in News[1:6]:
+        newsString += dnUrl + str(news) + "\n"
+    newsString += "\n" + dnUrl + "\n"
+    await ctx.send(newsString)
+
+
 
 @bot.command()
 async def ping(ctx):
