@@ -2,24 +2,23 @@ import aiohttp
 from bs4 import BeautifulSoup
 import asyncio
 
-async def GrabNewsUrls():
+async def GrabNewsUrls(url="https://www.dn.se/nyhetsdygnet"):
     '''
     Get the news article links in a form that can be clickable
     Input:      None
     Output:     news article links in a clickable form
     Effect:     None
     '''
-    return await findNewsTopics(await fetchNews())
+    return await findNewsTopics(await fetchNews(url))
 
-async def fetchNews():
+async def fetchNews(url):
     '''
     Get the HTML-text/-code from DN.se's webside /nyhetsdygnet
 
-    Input:      None
+    Input:      url
     Output:     rText - HTML-text/-code as text
     Effect:     Get the HTML-text/-code from DN.se's website /nyhetsdygnet as text
     '''
-    url = "https://www.dn.se/nyhetsdygnet"
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
             rText = await response.text()
