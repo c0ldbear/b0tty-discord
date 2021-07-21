@@ -1,2 +1,3 @@
 # file to totally ignore
 token_b0tty.py
+__pycache__
