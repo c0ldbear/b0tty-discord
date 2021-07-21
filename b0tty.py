@@ -30,7 +30,7 @@ async def add(ctx, left : int, right : int):
     await ctx.send(add2(left, right))
 
 @bot.command()
-async def news(ctx):
+async def idag(ctx):
     """Fetch the latest 5 news from dn.se/nyhetsdygnet.""" 
     News = await dnDay.GrabNewsUrls()
     newsString = ""
@@ -51,7 +51,10 @@ async def bootycall(ctx):
     newsString += "\n" + dnUrl + "\n"
     await ctx.send(newsString)
 
-
+@bot.command()
+async def inrikes(ctx):
+    """Fetch the latest 5 'inrikes' news from dn.se/sverige"""
+    await return
 
 @bot.command()
 async def ping(ctx):
